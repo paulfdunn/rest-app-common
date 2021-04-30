@@ -1,0 +1,5 @@
+rest-app
+k8s-setup.txt
+*.db
+*.log.*
+*.code-workspace
