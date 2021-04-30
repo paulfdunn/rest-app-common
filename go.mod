@@ -1,4 +1,4 @@
-module github.com/paulfdunn/rest-app/common
+module github.com/paulfdunn/rest-app-common
 
 go 1.16
 

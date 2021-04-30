@@ -19,11 +19,11 @@ You must have GO installed. This code was build and tested against GO 1.16.2
 Example of curl commands against the provided app, showing creating and deleting an auth (user).
 Start the app in a terminal window:
 ```
-paulfdunn@penguin:~/go/src/github.com/paulfdunn/rest-app/prod1$ ./readme_example_test.sh 
+paulfdunn@penguin:~/go/src/github.com/paulfdunn/rest-app-prod1$ ./readme_example_test.sh 
 ```
 Example terminal session:
 ```
-paulfdunn@penguin:~/go/src/github.com/paulfdunn/rest-app/prod1$ ./readme_example_test.sh 
+paulfdunn@penguin:~/go/src/github.com/paulfdunn/rest-app-prod1$ ./readme_example_test.sh 
 ++ basename ./readme_example_test.sh
 + ME=readme_example_test.sh
 + echo 'STARTING: readme_example_test.sh'
@@ -72,11 +72,11 @@ PASSED: readme_example_test.sh
 ```
 And see what is in the logs:
 ```
-paulfdunn@penguin:~/go/src/github.com/paulfdunn/rest-app/prod1$ cat rest-app.log.0
+paulfdunn@penguin:~/go/src/github.com/paulfdunn/rest-app-prod1$ cat rest-app.log.0
 info: 2021/04/19 22:48:43.454889 config.go:93: rest-app is starting....
 info: 2021/04/19 22:48:43.454955 config.go:95: logFilepath:./rest-app.log
 info: 2021/04/19 22:48:43.454970 config.go:96: auditLogFilepath:./rest-app.log.audit
-info: 2021/04/19 22:48:43.544240 rest-app.go:74: Config: {"HTTPSPort":8080,"LogFilepath":"./rest-app.log","LogLevel":0,"AppName":"rest-app","AuditLogName":"rest-app.audit","DataSourceName":"/home/paulfdunn/go/src/github.com/paulfdunn/rest-app/prod1/rest-app.db","JWTKeyFilepath":"/home/paulfdunn/go/src/github.com/paulfdunn/rest-app/prod1/key/jwt.rsa.public","JWTAuthRemoveInterval":60000000000,"JWTAuthTimeoutInterval":900000000000,"LogName":"rest-app","PasswordValidation":["^[\\S]{8,32}$","[a-z]","[A-Z]","[!#$%'()*+,-.\\\\/:;=?@\\[\\]^_{|}~]","[0-9]"],"PersistentDirectory":"/home/paulfdunn/go/src/github.com/paulfdunn/rest-app/prod1"}
+info: 2021/04/19 22:48:43.544240 rest-app.go:74: Config: {"HTTPSPort":8080,"LogFilepath":"./rest-app.log","LogLevel":0,"AppName":"rest-app","AuditLogName":"rest-app.audit","DataSourceName":"/home/paulfdunn/go/src/github.com/paulfdunn/rest-app-prod1/rest-app.db","JWTKeyFilepath":"/home/paulfdunn/go/src/github.com/paulfdunn/rest-app-prod1/key/jwt.rsa.public","JWTAuthRemoveInterval":60000000000,"JWTAuthTimeoutInterval":900000000000,"LogName":"rest-app","PasswordValidation":["^[\\S]{8,32}$","[a-z]","[A-Z]","[!#$%'()*+,-.\\\\/:;=?@\\[\\]^_{|}~]","[0-9]"],"PersistentDirectory":"/home/paulfdunn/go/src/github.com/paulfdunn/rest-app-prod1"}
 info: 2021/04/19 22:48:43.545356 authJWT.go:110: Registered handler: /auth/create/
 info: 2021/04/19 22:48:43.545469 authJWT.go:113: Registered handler: /auth/delete/
 info: 2021/04/19 22:48:43.545532 authJWT.go:116: Registered handler: /auth/info/
@@ -88,7 +88,7 @@ info: 2021/04/19 22:48:43.813056 rest-app.go:119: Created default auth: admin
 info: 2021/04/19 22:48:43.813090 rest-app.go:102: Registered handler: /
 info: 2021/04/19 22:48:46.577271 rest-app.go:123: rest-app handler {GET / HTTP/2.0 2 0 map[Accept:[*/*] Authorization:[Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTg4NzM0MjYsImlzcyI6InJlc3QtYXBwIiwiRW1haWwiOiJhZG1pbiIsIlRva2VuSUQiOiI3MWE3Mzg4NC0xZjYxLTk2NTYtZTU0Yy00ZDAyNzdiMWRlZTcifQ.8tcPh3kLFW7eXDB12snt-FaOC4Q6YFDYAXuaBxBseDs] User-Agent:[curl/7.64.0]] 0xc00006f290 <nil> 0 [] false 127.0.0.1:8080 map[] map[] <nil> map[] 127.0.0.1:59464 / 0xc0000de790 <nil> <nil> 0xc000012440}
 
-paulfdunn@penguin:~/go/src/github.com/paulfdunn/rest-app/prod1$ cat rest-app.log.audit.0 
+paulfdunn@penguin:~/go/src/github.com/paulfdunn/rest-app-prod1$ cat rest-app.log.audit.0 
 audit: 2021/04/19 22:48:43.454940 config.go:94: rest-app is starting....
 audit: 2021/04/19 22:48:46.477993 handlers.go:50: status: 201| req:&{Method:POST URL:/auth/create/ Proto:HTTP/2.0 ProtoMajor:2 ProtoMinor:0 Header:map[Accept:[*/*] Authorization:[Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTg4NzM0MjYsImlzcyI6InJlc3QtYXBwIiwiRW1haWwiOiJhZG1pbiIsIlRva2VuSUQiOiI3MWE3Mzg4NC0xZjYxLTk2NTYtZTU0Yy00ZDAyNzdiMWRlZTcifQ.8tcPh3kLFW7eXDB12snt-FaOC4Q6YFDYAXuaBxBseDs] Content-Length:[39] Content-Type:[application/x-www-form-urlencoded] User-Agent:[curl/7.64.0]] Body:0xc00006f170 GetBody:<nil> ContentLength:39 TransferEncoding:[] Close:false Host:127.0.0.1:8080 Form:map[] PostForm:map[] MultipartForm:<nil> Trailer:map[] RemoteAddr:127.0.0.1:59460 RequestURI:/auth/create/ TLS:0xc00031c0b0 Cancel:<nil> Response:<nil> ctx:0xc000012380}| body: body not logged, contains credentials for user|
 
